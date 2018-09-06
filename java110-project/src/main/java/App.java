@@ -10,21 +10,24 @@ public class App {
 
     public static void main(String[] args) {
         
-        StudentController.keyIn = keyIn;
-        TeacherController.keyIn = keyIn;
-        ManagerController.keyIn = keyIn;
+        StudentController sc=new StudentController(keyIn);
+//        sc.keyIn = keyIn;
+        TeacherController tc=new TeacherController(keyIn);
+//        tc.keyIn = keyIn;
+        ManagerController mc=new ManagerController(keyIn);
+//        mc.keyIn = keyIn;
         
         while (true) {
             String menu = promptMenu();
             
             if (menu.equals("1")) {
-                StudentController.serviceStudentMenu();
+                sc.serviceStudentMenu();
                 
             } else if (menu.equals("2")) {
-                TeacherController.serviceTeacherMenu();
+                tc.serviceTeacherMenu();
                 
             } else if (menu.equals("3")) {
-                ManagerController.serviceManagerMenu();
+                mc.serviceManagerMenu();
                 
             } else if (menu.equals("0")){
                 System.out.println("안녕히 가세요!");
