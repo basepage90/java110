@@ -10,12 +10,9 @@ public class App {
 
     public static void main(String[] args) {
         
-        StudentController sc=new StudentController(keyIn);
-//        sc.keyIn = keyIn;
-        TeacherController tc=new TeacherController(keyIn);
-//        tc.keyIn = keyIn;
-        ManagerController mc=new ManagerController(keyIn);
-//        mc.keyIn = keyIn;
+        StudentController sc = new StudentController(keyIn);
+        TeacherController tc = new TeacherController(keyIn);
+        ManagerController mc = new ManagerController(keyIn);
         
         while (true) {
             String menu = promptMenu();

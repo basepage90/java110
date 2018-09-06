@@ -3,16 +3,17 @@ package bitcamp.java110.cms.control;
 import java.util.Scanner;
 
 import bitcamp.java110.cms.domain.Manager;
-import bitcamp.java110.cms.util.ArrayList;
+import bitcamp.java110.cms.util.LinkedList;
 
 public class ManagerController {
 
-    private ArrayList<Manager> managers = new ArrayList<>();
+    private LinkedList<Manager> managers = new LinkedList<>();
     public Scanner keyIn;
     
     public ManagerController(Scanner keyIn) {
         this.keyIn = keyIn;
     }
+    
     public void serviceManagerMenu() {
         while (true) {
             System.out.print("매니저 관리> ");
@@ -35,7 +36,7 @@ public class ManagerController {
     
     private void printManagers() {
         for (int i = 0; i < managers.size(); i++) {
-            Manager s = (Manager)managers.get(i);
+            Manager s = managers.get(i);
             System.out.printf("%d: %s, %s, %s, %s, %s\n",
                     i,
                     s.getName(), 

@@ -3,18 +3,17 @@ package bitcamp.java110.cms.control;
 import java.util.Scanner;
 
 import bitcamp.java110.cms.domain.Student;
-import bitcamp.java110.cms.util.ArrayList;
+import bitcamp.java110.cms.util.LinkedList;
 
 public class StudentController {
 
-    private ArrayList<Student> students = new ArrayList<>();
-    // jkd 7이하 버전은 <Student> 생략불가
+    private LinkedList<Student> students = new LinkedList<>();
     public Scanner keyIn;
     
     public StudentController(Scanner keyIn) {
         this.keyIn = keyIn;
     }
-
+    
     public void serviceStudentMenu() {
         while (true) {
             System.out.print("학생 관리> ");
@@ -34,7 +33,7 @@ public class StudentController {
             }
         }
     }
-
+    
     private void printStudents() {
         for (int i = 0; i < students.size(); i++) {
             Student s = students.get(i);
@@ -48,31 +47,31 @@ public class StudentController {
                     s.getTel());
         }
     }
-
+    
     private void inputStudents() {
         while (true) {
             Student m = new Student();
-
+            
             System.out.print("이름? ");
             m.setName(keyIn.nextLine());
-
+            
             System.out.print("이메일? ");
             m.setEmail(keyIn.nextLine());
-
+            
             System.out.print("암호? ");
             m.setPassword(keyIn.nextLine());
-
+            
             System.out.print("최종학력? ");
             m.setSchool(keyIn.nextLine());
-
+            
             System.out.print("재직여부?(true/false) ");
             m.setWorking(Boolean.parseBoolean(keyIn.nextLine()));
-
+            
             System.out.print("전화? ");
             m.setTel(keyIn.nextLine());
-
+            
             students.add(m);
-
+            
             System.out.print("계속 하시겠습니까?(Y/n) ");
             String answer = keyIn.nextLine();
             if (answer.toLowerCase().equals("n"))
@@ -83,28 +82,28 @@ public class StudentController {
     private void deleteStudent() {
         System.out.print("삭제할 번호? ");
         int no = Integer.parseInt(keyIn.nextLine());
-
+        
         if (no < 0 || no >= students.size()) {
             System.out.println("무효한 번호입니다.");
             return;
         }
-
+        
         students.remove(no);
-
+        
         System.out.println("삭제하였습니다.");
     }
-
+    
     private void detailStudent() {
         System.out.print("조회할 번호? ");
         int no = Integer.parseInt(keyIn.nextLine());
-
+        
         if (no < 0 || no >= students.size()) {
             System.out.println("무효한 번호입니다.");
             return;
         }
-
+        
         Student student = students.get(no);
-
+        
         System.out.printf("이름: %s\n", student.getName());
         System.out.printf("이메일: %s\n", student.getEmail());
         System.out.printf("암호: %s\n", student.getPassword());
@@ -112,25 +111,24 @@ public class StudentController {
         System.out.printf("전화: %s\n", student.getTel());
         System.out.printf("재직여부: %b\n", student.isWorking());
     }
-
-    {
-        // 인스턴스 블록
+    
+    { // 인스턴스 블록
         Student s = new Student();
         s.setName("a");
         students.add(s);
-
+        
         s = new Student();
         s.setName("b");
         students.add(s);
-
+        
         s = new Student();
         s.setName("c");
         students.add(s);
-
+        
         s = new Student();
         s.setName("d");
         students.add(s);
-
+        
         s = new Student();
         s.setName("e");
         students.add(s);
