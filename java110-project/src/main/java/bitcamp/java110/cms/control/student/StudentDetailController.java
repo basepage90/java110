@@ -14,7 +14,7 @@ public class StudentDetailController {
     
     @RequestMapping("student/detail")
     public void detail(Scanner keyIn) {
-        System.out.print("조회할 번호? ");
+        System.out.print("조회할 이메일? ");
        
         String email= keyIn.nextLine(); 
       
