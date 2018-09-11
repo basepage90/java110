@@ -8,7 +8,7 @@ import bitcamp.java110.cms.annotation.RequestMapping;
 @Component
 public class HelloController {
 
-   @RequestMapping("hello")
+    @RequestMapping("hello")
     public void hello(Scanner keyIn) {
         System.out.println("안녕하세요!!!");
         

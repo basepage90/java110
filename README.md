@@ -2,6 +2,15 @@
 
 비트캠프 **자바 110기** 실습 프로젝트
 
+## java110-project (tag: v1.9)
+
+- QueryString 적용
+
+## java110-project (tag: v1.8)
+
+- 의존 객체 주입하기
+- 미니 IoC 컨테이너 개선
+
 ## java110-project (tag: v1.7)
 
 - DAO 도입하기
