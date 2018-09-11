@@ -4,7 +4,7 @@
 
 ## java110-project (tag: v1.9)
 
-- QueryString 적용
+- 
 
 ## java110-project (tag: v1.8)
 
