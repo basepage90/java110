@@ -8,7 +8,8 @@ public interface StudentDao {
     int insert(Student student);
     List<Student> findAll();
     Student findByEmail(String email);
-    int delete(String email);
+    Student findByNo(int no);
+    int delete(int no);
 }
 
 

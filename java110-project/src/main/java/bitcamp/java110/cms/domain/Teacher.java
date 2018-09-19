@@ -1,16 +1,11 @@
 package bitcamp.java110.cms.domain;
 
 public class Teacher extends Member {
-    protected String tel;
+    private static final long serialVersionUID = 1L;
+    
     protected int pay;
     protected String subjects;
     
-    public String getTel() {
-        return tel;
-    }
-    public void setTel(String tel) {
-        this.tel = tel;
-    }
     public int getPay() {
         return pay;
     }
