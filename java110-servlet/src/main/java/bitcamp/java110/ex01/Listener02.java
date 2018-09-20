@@ -10,7 +10,7 @@ import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpServletRequest;
 
 // 클라이언트로부터 요청이 들어오면 실행되는 리스너
-@WebListener
+//@WebListener
 public class Listener02 implements ServletRequestListener {
     
     public Listener02() {

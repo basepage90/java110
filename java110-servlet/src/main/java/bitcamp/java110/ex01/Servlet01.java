@@ -71,6 +71,20 @@ public class Servlet01 implements Servlet {
         // 예를 들면, 게시물 목록을 출력하거나 로그인을 처리하거나 회원 가입을 처리하는 등의 일을 한다.
         System.out.println("service() 호출됨.");
         
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+       
+        // 문제점?
+        // -영어를 제외한 다른 언어의 문자는 ?로 출력된다.
+        //
+        // 이유?
+        // - getWriter()가 리턴한 출력스트림은 기본적으로 자바유니코드를
+        // ISO-8859-1 문자표에 따라 인코딩하여 출력하기 때문이다.
+       
+        
     }
 
     @Override
