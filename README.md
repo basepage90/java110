@@ -1,13 +1,62 @@
 # java110
 
 비트캠프 **자바 110기** 실습 프로젝트
-## java110-project (tag: v2.2)
+
+## java110-project (tag: v4.0)
+
+- 서블릿 기술을 적용하여 서버 애플리케이션 만들기
+
+## java110-project (tag: v3.1) 
+
+- 웹서버를 중계 서버로 사용하기
+- 서블릿 컨테이너 적용
+
+## java110-project (tag: v3.0) 
+
+- 웹브라우저를 클라이언트로 사용하기
+- 서버에 HTTP 프로토콜을 처리하는 기능 추가
+
+## ## java110-project (tag: v2.9) 
+
+- Command 패턴으로 분할된 메서드를 한 클래스로 합치기
+
+## java110-project (tag: v2.8) 
+
+- 멀티스레드 적용하기(Connection-Oriented에서 Stateless 방식으로 요청 처리)
+
+## java110-project (tag: v2.7)
+
+- 멀티스레드 적용하기(Connection-Oriented에서 Statelful 방식으로 요청 처리)
+
+## java110-project (tag: v2.6)
+
+- Client/Server 구조로 변경
+
+## java110-project (tag: v2.5)
+
+- Spring IoC 컨테이너 도입
+
+## java110-project (tag: v2.4)
+
+- DB 커넥션 공유하기
+
+## java110-project (tag: v2.3)
 
 - DAO에 JDBC 적용
 
-## java110-project (tag: v2.1)
+## java110-project (tag: v2.2)
 
 - 예외처리 적용
+
+## java110-project (tag: v2.1)
+
+- 객체 Serialize/Deserialize 적용
+- java.io.Serializable 인터페이스 활용
+- transient modifier 사용법
+
+## java110-project (tag: v2.0.1)
+
+- 인터페이스와 구현체를 별도의 패키지로 분리하기
 
 ## java110-project (tag: v2.0)
 
@@ -21,7 +70,7 @@
 
 ## java110-project (tag: v1.8)
 
-- 의존 객체 주입하기
+- 의존 객체 주입하기 
 - 미니 IoC 컨테이너 개선
 
 ## java110-project (tag: v1.7)
@@ -38,6 +87,7 @@
 - 리플렉션 API 활용 II
 - 애노테이션 활용
 - 미니 IoC 컨테이너 개선
+
 
 ## java110-project (tag: v1.4)
 
@@ -69,7 +119,7 @@
 ## java110-project (tag: v0.8)
 
 - 목록을 다루는 클래스들을 리팩토링하기
-- 다형성 변수의 활용법
+- 다형적 변수의 활용법
 - 클래스 멤버(변수,메서드,블록)와 인스턴스 멤버의 차이점
 - 생성자 사용
 
