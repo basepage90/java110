@@ -10,12 +10,10 @@ import bitcamp.java110.cms.dao.impl.TeacherMysqlDao;
 import bitcamp.java110.cms.util.DataSource;
 
 //@WebListener
-public class ContextLoaderListener implements ServletContextListener{
-    
-    
+public class ContextLoaderListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        System.out.println("ContextLoaderListener.ContextInitialized() 실행!");
+        System.out.println("ContextLoaderListener.contextInitialized() 실행!");
         
         ServletContext sc = sce.getServletContext();
 
@@ -46,6 +44,5 @@ public class ContextLoaderListener implements ServletContextListener{
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }
