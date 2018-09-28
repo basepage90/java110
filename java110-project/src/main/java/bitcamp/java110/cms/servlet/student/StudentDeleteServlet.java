@@ -24,31 +24,37 @@ public class StudentDeleteServlet extends HttpServlet {
         
         int no = Integer.parseInt(request.getParameter("no"));
         
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
         
         StudentDao studentDao = (StudentDao)this.getServletContext()
                 .getAttribute("studentDao");
         
-        out.println("<!DOCTYPE html>");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<meta charset='UTF-8'>");
-        out.println("<title>학생 관리</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>학생 삭제 결과</h1>");
         
         try {
             studentDao.delete(no);
-            out.println("<p>삭제하였습니다.</p>");
+            response.sendRedirect("list");
+            
         } catch (Exception e) {
             e.printStackTrace();
-            out.println("<p>삭제 중 오류 발생!</p>");
+            
+            response.setHeader("Refresh", "3;url=list");
+            
+            response.setContentType("text/html;charset=UTF-8");
+            PrintWriter out = response.getWriter();
+            
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<meta charset='UTF-8'>");
+            out.println("<title>학생 관리</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>학생 삭제 오류!</h1>");
+            out.printf("<p>%s</p>\n", e.getMessage());
+            out.println("<p>잠시 기다리면 목록 페이지로 자동으로 이동합니다.</p>");
+            out.println("</body>");
+            out.println("</html>");
         }
         
-        out.println("</body>");
-        out.println("</html>");
     }
 
 }
