@@ -1,7 +1,6 @@
 package bitcamp.java110.cms.servlet.student;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,17 +23,23 @@ public class StudentDeleteServlet extends HttpServlet {
         
         int no = Integer.parseInt(request.getParameter("no"));
         
-        response.setContentType("text/plain;charset=UTF-8");
-        PrintWriter out = response.getWriter();
         
         StudentDao studentDao = (StudentDao)this.getServletContext()
                 .getAttribute("studentDao");
         
-        if (studentDao.delete(no) > 0) {
-            out.println("삭제하였습니다.");
-        } else {
-            out.println("번호에 해당하는 학생이 없습니다.");
+        
+        try {
+            studentDao.delete(no);
+            response.sendRedirect("list");
+            
+        } catch (Exception e) {
+            request.setAttribute("error", e);
+            request.setAttribute("message", "학생 삭제 오류!");
+            request.setAttribute("refresh", "3;url=list");
+            
+            request.getRequestDispatcher("/error").forward(request, response);
         }
+        
     }
 
 }
