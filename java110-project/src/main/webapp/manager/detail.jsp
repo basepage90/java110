@@ -8,7 +8,7 @@
 <head>
 <meta charset='UTF-8'>
 <title>매니저 관리</title>
-<link rel='stylesheet' href='../css/common.css'>
+<link rel='stylesheet' href='/css/common.css'>
 <style>
 table, th, td {
     border: 1px solid gray;
@@ -22,7 +22,7 @@ table, th, td {
 
 <jsp:include page="../header.jsp"></jsp:include>
 
-<h1>매니저 상세정보(MVC)</h1>
+<h1>매니저 상세정보</h1>
 
 <table>
 <tbody>
