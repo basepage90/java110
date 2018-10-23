@@ -1,4 +1,4 @@
-package bitcamp.java110.cms.web.auth;
+package bitcamp.java110.cms.web;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -9,28 +9,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import bitcamp.java110.cms.domain.Member;
+import bitcamp.java110.cms.mvc.RequestMapping;
+import bitcamp.java110.cms.mvc.RequestParam;
 import bitcamp.java110.cms.service.AuthService;
-import bitcamp.java110.cms.web.PageController;
 
-@Component("/auth/login")
-public class LoginController implements PageController {
+@Component
+public class AuthController {
 
     @Autowired
     AuthService authService;
     
-    @Override
-    public String service(
+    @RequestMapping("/auth/login")
+    public String login(
+            @RequestParam("type") String type,
+            @RequestParam("email") String email,
+            @RequestParam("password") String password,
+            @RequestParam("save") String save,
             HttpServletRequest request, 
-            HttpServletResponse response) {
+            HttpServletResponse response,
+            HttpSession session) {
         
         if (request.getMethod().equals("GET")) {
             return  "/auth/form.jsp";
         }
-        
-        String type = request.getParameter("type");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String save = request.getParameter("save");
         
         if (save != null) {// 이메일 저장하기를 체크했다면,
             Cookie cookie = new Cookie("email", email);
@@ -45,7 +46,6 @@ public class LoginController implements PageController {
         
         Member loginUser = authService.getMember(email, password, type);
         
-        HttpSession session = request.getSession();
         if (loginUser != null) {
             // 회원 정보를 세션에 보관한다.
             session.setAttribute("loginUser", loginUser);
@@ -68,6 +68,12 @@ public class LoginController implements PageController {
             session.invalidate();
             return "redirect:login";
         }
+    }
+    
+    @RequestMapping("/auth/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:login";
     }
 }
 
